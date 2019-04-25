@@ -2,6 +2,8 @@
 import os
 import sys
 
+heroku config:set DISABLE_COLLECTSTATIC=1
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "issue_tracker.settings")
     try:
