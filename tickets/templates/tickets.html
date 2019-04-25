@@ -30,6 +30,7 @@
             <td>{{ ticket.upvotes }}</td>
         </tr>
         <a href="{% url 'upvote' ticket.id %}" class="btn btn-success">upvote</a>
+        <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-success">Edit</a>
     </table>
     
 </div>

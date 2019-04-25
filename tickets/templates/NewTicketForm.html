@@ -1,10 +1,12 @@
-{% extends 'base.html' %} {% load bootstrap_tags %}{% block page_title %}Home Page{% endblock %} {% block page_heading %}Home{% endblock %} {% block content %}
+{% extends 'base.html' %} {% load bootstrap_tags %}{% block page_title %}New Ticket Page{% endblock %} <h1>{% block page_heading %}New Ticket{% endblock %} </h1>
 
-    <h1>New Ticket</h1>
+
+{% block content %}
+<div class="container">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <button type="submit" class="btn btn-info">Save</button>
     </form>
-
+</div>
 {% endblock %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<div class="container">
+<div class="container tickets">
     <h2> Tracker Number = {{ ticket.id }}</h2>
     <h2> Tracker Name = {{ ticket.title }}</h2>
     <table>
@@ -29,6 +29,7 @@
             
         </tr>
         <a href="{% url 'upvote' ticket.id %}" class="btn btn-success">upvote</a>
+        <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-success">Edit</a>
     </table>
 </div>
 {% endblock %}
