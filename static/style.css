@@ -11,3 +11,16 @@ form{
     background-color:#9393ff;
     padding:20px;
 }
+
+table{
+    margin-bottom:100px;
+}
+
+.tickets, h2{
+    color:#0c0851;
+}
+
+.tickets{
+    border:solid;
+    margin-bottom:50px;
+ }

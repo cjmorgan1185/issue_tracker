@@ -10,10 +10,9 @@ def get_ticket(request):
     of Tickets that were published prior to 'now'
     and render them to the 'tickets.html' template
     """
-    tickets = Ticket.objects.filter(published_date__lte=timezone.now()
-        ).order_by('upvote')
+    tickets = Ticket.objects.filter(created_date__lte=timezone.now()
+        ).order_by('-upvotes')
     return render(request, "tickets.html", {'tickets': tickets})
-
 
 def ticket_detail(request, pk):
     """
@@ -27,7 +26,13 @@ def ticket_detail(request, pk):
     ticket.views += 1
     ticket.save()
     return render(request, "ticketdetail.html", {'ticket': ticket})
-
+    
+    
+def upvote(request, pk):
+    ticket = get_object_or_404(Ticket, pk=pk)
+    ticket.upvotes += 1
+    ticket.save()
+    return render(request, "ticketdetail.html", {'ticket': ticket})
 
 def create_or_edit_ticket(request, pk=None):
     """
@@ -43,3 +48,4 @@ def create_or_edit_ticket(request, pk=None):
     else:
         form = NewTicketForm(instance=ticket)
     return render(request, 'NewTicketForm.html', {'form': form})
+

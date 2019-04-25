@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for ticket in tickets %}
+<div class="container tickets">
+    <h2> Tracker Number = {{ ticket.id }}</h2>
+    <h2> Tracker Name = {{ ticket.title }}</h2>
+    <table>
+        <tr>
+            <th>User Name</th><br>
+            <td>{{ ticket.name }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ ticket.description }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ ticket.created_date }}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{ ticket.case }}</td>
+        </tr>
+        <tr>
+            <th>Views</th>
+            <td>{{ ticket.views }}</td>
+        </tr>
+        <tr>
+            <th>Upvotes</th>
+            <td>{{ ticket.upvotes }}</td>
+        </tr>
+        <a href="{% url 'upvote' ticket.id %}" class="btn btn-success">upvote</a>
+    </table>
+    
+</div>
+    {% endfor %}
+{% endblock %}

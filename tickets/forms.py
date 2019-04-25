@@ -6,4 +6,4 @@ class NewTicketForm(forms.ModelForm):
 
     class Meta:
         model = Ticket
-        fields = ('name','title', 'content', 'published_date', 'TYPE_CHOICES')
+        fields = ('name', 'title', 'description', 'case')

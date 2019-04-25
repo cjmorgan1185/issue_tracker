@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block page_title %}Home Page{% endblock %} {% block page_heading %}Home{% endblock %} {% block content %}
+
+{% if user.is_authenticated %}
+<div class="container">
+    <a href="{% url 'new_ticket' %}" class="btn btn-primary btn-lg btn-block">Add</a>
+
+    <a href="{% url 'get_ticket' %}" class="btn btn-primary btn-lg btn-block">View</a>
+
+</div>
+{% endif %}
+
+{% endblock %}
