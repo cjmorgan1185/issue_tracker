@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    os.environ.get('C9_HOSTNAME'), 'issuetrackercm.herokuapp.com']
+    os.environ.get('C9_HOSTNAME'), 'issuescms.herokuapp.com']
 
 
 # Application definition
